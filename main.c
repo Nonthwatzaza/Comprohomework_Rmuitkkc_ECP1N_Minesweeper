@@ -5,7 +5,7 @@
 // 25 % by Thanapun Thongjurai @ECP1N Rmuit kkc
 // 25 % by solution
 // Minesweeper Homework code
-// 98.46% code
+// 99.46% code
 
 
 int main()
@@ -23,21 +23,21 @@ int main()
         printf("=======================\n");
     }
         char RC [Row][Column];
-    while(Round< Row)
+    while(Round< Row) // รอบน้อยกว่าแถว
     {
         char Cache [Column+1];
         scanf("%s",Cache);
         for(int i = 0 ; i < Column ; i++)
         {
-          RC[Round][i] = Cache[i];
+          RC[Round][i] = Cache[i];  // RC[0][1]= cache[1] >> RC[1][2]= cache[2]
         }
       Round++;
     }
     printf("\n");
     int Draw[Row][Column];
-    for(int i = 0;i<Row ;i++)
-      for(int j = 0 ; j < Column ; j++)
-        Draw[i][j] = 0;
+    for(int i = 0;i<Row ;i++)  // ให้ i=0;ถ้าi น้อยกว่า แถว ; i++
+      for(int j = 0 ; j < Column ; j++) // ให้ j=0;ถ้าj น้อยคอลัม แถว ; j++
+        Draw[i][j] = 0; //ให้ตำแหน่งนั้น=0
 
     for(int i = 0;i<Row ;i++)
       for(int j = 0 ; j < Column ; j++){
@@ -73,12 +73,12 @@ int main()
     {
       for(int j = 0 ; j < Column ; j++)
       {
-        if(RC[i][j] == '*')
+        if(RC[i][j] == '*') //ถ้าตำแหน่งใดมี *
         {
-          printf("%c",RC[i][j]);
+          printf("%c",RC[i][j]); //แสดงจุดนั้น
         }
         else
-          printf("%d",Draw[i][j]);
+          printf("%d",Draw[i][j]); // แสดงตัวเลข
       }
       printf("\n");
     }
